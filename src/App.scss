@@ -1,0 +1,108 @@
+//  Dark Mode
+$darkBlue : hsl(209, 23%, 22%); // (Dark Mode Elements)
+$veryDarkBlue : hsl(207, 26%, 17%); //(Dark Mode Background)
+
+
+
+// Light mode
+$veryDarkBlueText : hsl(200, 15%, 8%); //(Light Mode Text)
+$lightModeInput : hsl(0, 0%, 52%); //  (Light Mode Input)
+$veryLightGrey : hsl(0, 0%, 98%); // (Light Mode Background)
+$white : hsl(0, 0%, 100%); //(Dark Mode Text & Light Mode Elements)
+
+
+
+body{
+  font-family: 'Nunito Sans', sans-serif;
+
+}
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+
+
+.outside-container { // on the out side
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.inner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+
+.header{
+  background-color: $white;
+  color: $veryDarkBlue;
+  transition: .2s ease-in-out all;
+  .inner-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    .logo{
+      font-size: 1.5rem;
+
+    }
+    .darkmode-button{
+      cursor: pointer;
+    }
+
+  }
+  
+}
+
+.header.dark{
+  background-color: $veryDarkBlue;
+  color: $white;
+  .inner-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    .logo{
+      font-size: 1.5rem;
+
+    }
+    .darkmode-button{
+      cursor: pointer;
+    }
+
+  }
+  
+}
+
+
+
+// bootstrap break points
+
+@media (min-width: 576px) {
+
+
+}
+@media (min-width: 768px) {
+
+
+}
+@media (min-width: 992px) {
+
+
+}
+@media (min-width: 1200px) {
+
+
+}
+@media (min-width: 1400px) {
+
+
+}
