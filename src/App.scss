@@ -12,6 +12,62 @@ $white : hsl(0, 0%, 100%); //(Dark Mode Text & Light Mode Elements)
 
 
 
+.spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(270deg);
+  }
+}
+
+
+
+// loader
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+      stroke: #4285F4;
+  }
+  // 25% {
+  //     stroke: #DE3E35;
+  // }
+  // 50% {
+  //     stroke: #F7C223;
+  // }
+  // 75% {
+  //     stroke: #1B9A59;
+  // }
+  100% {
+      stroke: #4285F4;
+  }
+}
+@keyframes dash {
+  0% {
+      stroke-dashoffset: 187;
+  }
+  50% {
+      stroke-dashoffset: 46.75;
+      transform: rotate(135deg);
+  }
+  100% {
+      stroke-dashoffset: 187;
+      transform: rotate(450deg);
+  }
+}
+
+
+
 body{
   font-family: 'Nunito Sans', sans-serif;
 
@@ -63,7 +119,7 @@ body{
 }
 
 .header.dark{
-  background-color: $veryDarkBlue;
+  background-color: $darkBlue;
   color: $white;
   .inner-container{
     display: flex;
@@ -83,18 +139,116 @@ body{
 }
 
 
+.home{
+  min-height: calc(100vh - 4.5rem);
+  background-color: $veryLightGrey;
+  transition: .2s ease-in-out all;
+  color:$veryDarkBlue;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+
+  .inner-container{
+    .list{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 4rem;
+
+      .country-card{
+        display: flex;
+        flex-direction: column;
+        border-radius: .2rem;
+        overflow: hidden;
+        transition: .2s ease-in-out all;
+        cursor: pointer;
+        .flag-image{
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+        .description{
+          transition: .2s ease-in-out all;
+          padding: 2rem 1rem 2rem 1rem; 
+          background-color: $white;
+          .title{
+            font-size: 1.1rem;
+            height : 4rem;
+            transition: .2s ease-in-out all;
+          }
+          .description-item{
+            margin-bottom: 1rem;
+            transition: .2s ease-in-out all;
+ 
+          }
+
+        }
+      }
+    }
+  }
+
+}
+.home.dark{
+  background-color: $veryDarkBlue;
+  color: $white;
+
+  .inner-container{
+    .list{
+      .country-card{
+
+
+        .description{
+          background-color: $darkBlue;
+        }
+      }
+
+
+    }}
+
+
+
+}
+
+
+
+
+
+
 
 // bootstrap break points
 
-@media (min-width: 576px) {
+@media (min-width: 576px) {  .home{
+  .inner-container{
+    .list{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
 
 
 }
 @media (min-width: 768px) {
-
+  .home{
+    .inner-container{
+      .list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
 
 }
 @media (min-width: 992px) {
+  .home{
+  .inner-container{
+    .list{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
 
 
 }
