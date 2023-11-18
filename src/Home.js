@@ -76,14 +76,14 @@ const handleFilterChange=(e)=>{
         </div>
 
 { countries.filter(country=> country.name.common.toLowerCase().includes(search.toLowerCase())).map((country, index) => {
-              return <HomeItem key={index} official = {country.name.official} name={country.name.common} population={country.population} region={country.region} capital={country.capital} flag={country.flags.svg} />;
+              return <HomeItem key={index} official = {country.name.official} name={country.name.common} population={country.population} region={country.region} code={country.ccn3}  capital={country.capital} flag={country.flags.svg} />;
             }).length > 0 ?
         <div className="list">
  
          
               
         {countries.filter(country => country.name.common.toLowerCase().includes(search.toLowerCase())).map((country, index) => {
-              return <HomeItem key={index} official = {country.name.official} name={country.name.common} population={country.population} region={country.region} capital={country.capital} flag={country.flags.svg} />;
+              return <HomeItem key={index} official = {country.name.official} name={country.name.common} population={country.population} region={country.region} code={country.ccn3} capital={country.capital} flag={country.flags.svg} />;
             })}
          
             

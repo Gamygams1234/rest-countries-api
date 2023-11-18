@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function HomeItem(props) {
-  const { name, population, capital, region, flag, official,  } = props;
+  const { name, population, capital, region, flag, official, code  } = props;
 
   return (
-    <Link  to={"/countries/"+ official} className="country-card">
+    <Link  to={"/countries/"+ code} className="country-card">
       <div className="flag-image" style={{ backgroundImage: `url(${flag})` }}></div>
       <div className="description">
         <div className="title fw-800">{name}</div>

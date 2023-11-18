@@ -36,7 +36,7 @@ export default function CountryInfo() {
 
   useEffect(() => {
    
-    fetch("https://restcountries.com/v3.1/name/" + params.country)
+    fetch("https://restcountries.com/v3.1/alpha/" + params.country)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -57,6 +57,7 @@ export default function CountryInfo() {
           if (data[0].borders){
          
             setBorders(data[0].borders)
+            console.log(data[0].borders)
      
       
           }else{
